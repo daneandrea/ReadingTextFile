@@ -41,9 +41,10 @@
             this.lblViewRecord.AutoSize = true;
             this.lblViewRecord.Font = new System.Drawing.Font("Franklin Gothic Demi", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblViewRecord.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(167)))), ((int)(((byte)(141)))));
-            this.lblViewRecord.Location = new System.Drawing.Point(33, 18);
+            this.lblViewRecord.Location = new System.Drawing.Point(44, 22);
+            this.lblViewRecord.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblViewRecord.Name = "lblViewRecord";
-            this.lblViewRecord.Size = new System.Drawing.Size(154, 30);
+            this.lblViewRecord.Size = new System.Drawing.Size(195, 38);
             this.lblViewRecord.TabIndex = 13;
             this.lblViewRecord.Text = "View Records";
             // 
@@ -51,9 +52,10 @@
             // 
             this.btnUpload.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpload.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(167)))), ((int)(((byte)(141)))));
-            this.btnUpload.Location = new System.Drawing.Point(348, 159);
+            this.btnUpload.Location = new System.Drawing.Point(464, 196);
+            this.btnUpload.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpload.Name = "btnUpload";
-            this.btnUpload.Size = new System.Drawing.Size(85, 42);
+            this.btnUpload.Size = new System.Drawing.Size(113, 52);
             this.btnUpload.TabIndex = 12;
             this.btnUpload.Text = "Upload";
             this.btnUpload.UseVisualStyleBackColor = true;
@@ -63,9 +65,10 @@
             // 
             this.btnFind.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFind.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(167)))), ((int)(((byte)(141)))));
-            this.btnFind.Location = new System.Drawing.Point(348, 111);
+            this.btnFind.Location = new System.Drawing.Point(464, 137);
+            this.btnFind.Margin = new System.Windows.Forms.Padding(4);
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(85, 42);
+            this.btnFind.Size = new System.Drawing.Size(113, 52);
             this.btnFind.TabIndex = 11;
             this.btnFind.Text = "Find";
             this.btnFind.UseVisualStyleBackColor = true;
@@ -75,19 +78,22 @@
             // 
             this.btnRegister.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(167)))), ((int)(((byte)(141)))));
-            this.btnRegister.Location = new System.Drawing.Point(348, 63);
+            this.btnRegister.Location = new System.Drawing.Point(464, 78);
+            this.btnRegister.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(85, 42);
+            this.btnRegister.Size = new System.Drawing.Size(113, 52);
             this.btnRegister.TabIndex = 10;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click_1);
             // 
             // lvStudentRecord
             // 
             this.lvStudentRecord.HideSelection = false;
-            this.lvStudentRecord.Location = new System.Drawing.Point(26, 62);
+            this.lvStudentRecord.Location = new System.Drawing.Point(35, 76);
+            this.lvStudentRecord.Margin = new System.Windows.Forms.Padding(4);
             this.lvStudentRecord.Name = "lvStudentRecord";
-            this.lvStudentRecord.Size = new System.Drawing.Size(300, 225);
+            this.lvStudentRecord.Size = new System.Drawing.Size(399, 276);
             this.lvStudentRecord.TabIndex = 9;
             this.lvStudentRecord.UseCompatibleStateImageBehavior = false;
             // 
@@ -97,15 +103,16 @@
             // 
             // FrmStudentRecord
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(233)))), ((int)(((byte)(207)))));
-            this.ClientSize = new System.Drawing.Size(458, 305);
+            this.ClientSize = new System.Drawing.Size(611, 375);
             this.Controls.Add(this.lblViewRecord);
             this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.btnFind);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.lvStudentRecord);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmStudentRecord";
             this.Text = "FrmStudentRecord";
             this.ResumeLayout(false);

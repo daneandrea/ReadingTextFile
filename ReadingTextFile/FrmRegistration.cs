@@ -20,30 +20,42 @@ namespace ReadingTextFile
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            string[] studentInfo =
+          string studentNumber = txtStudNo.Text.Trim();
+            if (string.IsNullOrEmpty(studentNumber))
             {
-               "Student No: " + txtStudNo.Text,
-               "Last Name" + txtLastName.Text,
-               "Program: " + cmbProgram.Text,
-               "Gender:" + cmbGender.Text,
-               "Age: " + txtAge.Text,
-               "Birthday: " + dtpBirthday.Text,
-               "Contact No: " + txtContactNo.Text
+                MessageBox.Show("Please enter a student number.");
+                return;
+            }
 
+            string[] studentInfo = {
+                "Student Number: " + studentNumber,
+                "Last Name: " + txtLastName.Text,
+                "First Name: " + txtFirstName.Text,
+                "Middle Name: " + txtMI.Text,
+                "Gender: " + cmbGender.Text,
+                "Birthday: " + dtpBirthday.Value.ToShortDateString(),
+                "Program: " + cmbProgram.Text,
+                "Contact No: " + txtContactNo.Text,
+                "Age: " + txtAge.Text
             };
-            string relativePath = @"..\..\MyProject";
+            string relativePath = @"..\..\FileStorage";
             string docPath = Path.GetFullPath(relativePath);
-            string fileName = txtStudNo.Text + ".txt";
-
-
-            using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, fileName)))
+            using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, studentNumber + ".txt")))
             {
-                foreach (string line in studentInfo)
+                foreach (string info in studentInfo)
                 {
-                    outputFile.WriteLine(line);
+                    outputFile.WriteLine(info);
                 }
             }
-            MessageBox.Show("Registration Successful!");
+            MessageBox.Show("Registration file created!");
+            FrmStudentRecord studentRecordForm = new FrmStudentRecord();
+            studentRecordForm.Show();
+            this.Hide();
+        }
+
+        private void FrmRegistration_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

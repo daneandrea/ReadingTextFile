@@ -13,34 +13,60 @@ namespace ReadingTextFile
 {
     public partial class FrmOpenTextFile : Form
     {
+
         public FrmOpenTextFile()
         {
             InitializeComponent();
         }
 
+      
         private void btnOpen_Click(object sender, EventArgs e)
         {
-            DisplayToList();
-
+            lvShowText_SelectedIndexChanged(sender, e);
         }
-        private void DisplayToList()
+        private void lvShowText_SelectedIndexChanged(object sender, EventArgs e)
         {
-            openFileDialog1.InitialDirectory = @"C:\";
-            openFileDialog1.Title = "Browse Text Files";
-            openFileDialog1.DefaultExt = "txt";
-            openFileDialog1.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
-            openFileDialog1.ShowDialog();
 
-            string path = openFileDialog1.FileName;
-            using (StreamReader streamReader = File.OpenText(path))
+            OpenFileDialog openFileDialog1 = new OpenFileDialog
             {
-                string _getText = "";
-                while ((_getText = streamReader.ReadLine()) != null)
+                InitialDirectory = Path.Combine(Application.StartupPath, "TextFiles"),
+                Title = "Browse Text Files",
+                DefaultExt = "txt",
+                Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*"
+            };
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string path = openFileDialog1.FileName;
+
+                try
                 {
-                    Console.WriteLine(_getText);
-                    lvShowText.Items.Add(_getText);
+                    using (StreamReader streamReader = File.OpenText(path))
+                    {
+                        string _getText;
+                        lvShowText.Items.Clear();
+
+                        while ((_getText = streamReader.ReadLine()) != null)
+                        {
+                            lvShowText.Items.Add(_getText);
+                        }
+                    }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error reading file: " + ex.Message);
+                }
+
             }
         }
+
+        private void btnStudentRecords_Click(object sender, EventArgs e)
+        {
+            FrmStudentRecord studentRecordForm = new FrmStudentRecord();
+            studentRecordForm.Show();
+            this.Hide();
+        }
+
+   
     }
 }

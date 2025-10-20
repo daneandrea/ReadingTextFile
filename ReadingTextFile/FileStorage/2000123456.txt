@@ -1,0 +1,9 @@
+Student Number: 2000123456
+Last Name: Bautista
+First Name: Dane Andrea
+Middle Name: C.
+Gender: Female
+Birthday: 24/08/2005
+Program: BS Information Technology
+Contact No: 09915801546
+Age: 20
